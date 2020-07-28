@@ -11,6 +11,16 @@ type Comment struct {
 	CreatedAt	time.Time	`json:"created_at" xorm:"created_at"`
 }
 
+type ReplyComment struct {
+	Id			int64
+	CommentId	int64		`json:"comment_id" xorm:"comment_id"`
+	PostId		int64		`json:"post_id" xorm:"post_id"`
+	Content		string		`json:"content" xorm:"content"`
+	UserId		int64		`json:"user_id" xorm:"user_id"`
+	UserName	string		`json:"user_name" xorm:"user_name"`
+	CreatedAt	time.Time	`json:"created_at" xorm:"created_at"`
+}
+
 func (user *User) CreateComment(postId int64, content string) (err error) {
 	if err = Engine.Ping(); err != nil {
 		return
