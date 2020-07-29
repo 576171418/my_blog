@@ -75,5 +75,4 @@ func GetComments(w http.ResponseWriter, r *http.Request) {
 	response, _ = json.Marshal(responseInfo)
 
 	w.Write(response)
-
 }

@@ -101,3 +101,50 @@ func PostLike(w http.ResponseWriter, r *http.Request) {
 	w.Write(response)
 
 }
+
+func PostUnlike(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	var response []byte
+
+	tokenStr := r.Header.Get("token")
+
+	userId, succ := GetUserIdFromToken(tokenStr)
+
+	if !succ {
+		panic(fmt.Sprint("无效的 token"))
+	}
+
+	err, user := UserById(userId)
+
+	if err != nil {
+		panic(fmt.Sprint("获取用户信息失败"))
+	}
+
+	post_id := r.Form.Get("post_id")
+	postId, _ := strconv.ParseInt(post_id, 10, 64)
+
+	isLiked, err := PostIsLiked(postId, user.Id)
+
+	if err != nil {
+		panic(fmt.Sprint("数据库查询失败"))
+	}
+
+	if !isLiked {
+		responseInfo := Response{
+			Code:    -1,
+			Message: "此文章没有点赞记录",
+			Data:    nil,
+		}
+		response, _ = json.Marshal(responseInfo)
+	} else {
+		_ = user.PostUnlike(postId)
+		responseInfo := Response{
+			Code:    0,
+			Message: "取消点赞成功",
+			Data:    nil,
+		}
+		response, _ = json.Marshal(responseInfo)
+	}
+	w.Write(response)
+
+}

@@ -59,4 +59,11 @@ var routes = WebRoutes{
 		HandleFunc: PostLike,
 		Middleware: nil,
 	},
+	WebRoute{
+		Name:       "PostUnlike",
+		Method:     "POST",
+		Pattern:    "/post/unlike",
+		HandleFunc: PostUnlike,
+		Middleware: nil,
+	},
 }

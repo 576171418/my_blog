@@ -1,6 +1,8 @@
 package models
 
-import "time"
+import (
+	"time"
+)
 
 type Post struct {
 	Id        		int64		`json:"id"`
@@ -69,6 +71,26 @@ func (user *User) PostLike(postId int64) (err error) {
 	}
 
 	post.LikesNumber += 1
+
+	_, err = Engine.Id(postId).Update(post)
+
+	return
+}
+
+func (user *User) PostUnlike(postId int64) (err error) {
+	if err = Engine.Ping(); err != nil {
+		return
+	}
+
+	_, err = Engine.Where("post_id = ? and user_id = ?", postId, user.Id).Delete(&UserLikePost{})
+
+	err, post := PostById(postId)
+
+	if err != nil {
+		return
+	}
+
+	post.LikesNumber -= 1
 
 	_, err = Engine.Id(postId).Update(post)
 
