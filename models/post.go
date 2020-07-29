@@ -13,6 +13,12 @@ type Post struct {
 	UserId			int64		`xorm:"user_id" json:"user_id"`
 }
 
+type UserLikePost struct {
+	UserId			int64
+	PostId			int64
+	CreatedAt		time.Time
+}
+
 func (user *User) CreatePost(post Post) (err error) {
 
 	if err = Engine.Ping(); err != nil {
@@ -33,5 +39,62 @@ func (user *User) CreatePost(post Post) (err error) {
 		CommentsNumber: 0,
 		UserId:			user.Id,
 	})
+	return
+}
+
+func (user *User) PostLike(postId int64) (err error) {
+
+	if err = Engine.Ping(); err != nil {
+		return
+	}
+
+	if err = Engine.Sync2(&Post{}); err != nil {
+		return
+	}
+
+	_, err = Engine.Insert(&UserLikePost{
+		UserId: 	user.Id,
+		PostId: 	postId,
+		CreatedAt:	time.Now(),
+	})
+
+	if err != nil {
+		return
+	}
+
+	err, post := PostById(postId)
+
+	if err != nil {
+		return
+	}
+
+	post.LikesNumber += 1
+
+	_, err = Engine.Id(postId).Update(post)
+
+	return
+}
+
+func PostIsLiked(postId, userId int64) (isLiked bool, err error){
+
+	if err = Engine.Ping(); err != nil {
+		return
+	}
+
+	if err = Engine.Sync2(&UserLikePost{}); err != nil {
+		return
+	}
+
+	isLiked, err = Engine.Where("post_id = ? and user_id = ?", postId, userId).Get(&UserLikePost{})
+
+	return
+}
+
+func PostById(id int64) (err error, post Post) {
+	if err = Engine.Ping(); err != nil {
+		return
+	}
+
+	_, err = Engine.Where("id = ?", id).Get(&post)
 	return
 }

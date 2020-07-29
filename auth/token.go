@@ -11,7 +11,7 @@ type JwtToken struct {
 }
 
 //根据 Id生成Token
-func GenerateToken(id int) (string, error) {
+func GenerateToken(id int64) (string, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"id": id,
 	})

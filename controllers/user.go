@@ -14,7 +14,7 @@ func Login(writer http.ResponseWriter, request *http.Request) {
 	phone := request.Form.Get("phone")
 	password := request.Form.Get("password")
 	var response []byte
-	has, err := AuthUserPassword(phone, password)
+	user, err := AuthUserPassword(phone, password)
 	if err != nil {
 		responseInfo := Response{
 			Code:    -1,
@@ -23,8 +23,8 @@ func Login(writer http.ResponseWriter, request *http.Request) {
 		}
 		response, _ = json.Marshal(responseInfo)
 	} else {
-		if has {
-			token, _ := auth.GenerateToken(1)
+		if user.Id != 0 {
+			token, _ := auth.GenerateToken(user.Id)
 			responseInfo := Response{
 				Code:    1,
 				Message: "登录成功",

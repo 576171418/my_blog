@@ -71,11 +71,11 @@ func UserById(id int) (err error, user User) {
 	return
 }
 
-func AuthUserPassword(phone, password string) (has bool, err error) {
+func AuthUserPassword(phone, password string) (user User, err error) {
 	if err = Engine.Ping(); err != nil {
 		return
 	}
-	has, err = Engine.Where("phone = ? and password = ?", phone, password).Get(&User{})
+	_, err = Engine.Where("phone = ? and password = ?", phone, password).Get(&user)
 	return
 }
 

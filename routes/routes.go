@@ -52,4 +52,11 @@ var routes = WebRoutes{
 		HandleFunc: GetComments,
 		Middleware: nil,
 	},
+	WebRoute{
+		Name:       "PostLike",
+		Method:     "POST",
+		Pattern:    "/post/like",
+		HandleFunc: PostLike,
+		Middleware: nil,
+	},
 }
