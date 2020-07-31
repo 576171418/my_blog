@@ -4,9 +4,6 @@
     <list default="true" id="60df45b5-af2e-4c19-b997-fbe8e2d54e3f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/comment.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/comment.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/post.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/post.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/post.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/post.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +74,10 @@
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state x="184" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.810@0.23.1440.810" timestamp="1594887657529" />
+    <state x="303" y="29" key="CommitChangelistDialog2" timestamp="1596108234611">
+      <screen x="0" y="23" width="1440" height="807" />
+    </state>
+    <state x="303" y="29" key="CommitChangelistDialog2/0.23.1440.807@0.23.1440.807" timestamp="1596108234611" />
     <state width="1398" height="224" key="GridCell.Tab.0.bottom" timestamp="1596018041386">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
@@ -109,6 +110,10 @@
     <state width="1398" height="226" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1595585783159" />
     <state width="1398" height="224" key="GridCell.Tab.0.right/0.23.1440.813@0.23.1440.813" timestamp="1596018041386" />
     <state width="1398" height="235" key="GridCell.Tab.0.right/0.23.1440.817@0.23.1440.817" timestamp="1594967102850" />
+    <state x="503" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596108239810">
+      <screen x="0" y="23" width="1440" height="807" />
+    </state>
+    <state x="503" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.807@0.23.1440.807" timestamp="1596108239810" />
     <state x="378" y="185" width="683" height="486" key="find.popup" timestamp="1596012517819">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
@@ -117,13 +122,13 @@
     <state x="378" y="185" width="683" height="486" key="find.popup/0.23.1440.811@0.23.1440.811" timestamp="1595484581004" />
     <state x="378" y="185" width="683" height="486" key="find.popup/0.23.1440.812@0.23.1440.812" timestamp="1595326207224" />
     <state x="378" y="185" width="683" height="486" key="find.popup/0.23.1440.813@0.23.1440.813" timestamp="1596012517819" />
-    <state x="845" y="160" width="670" height="678" key="search.everywhere.popup" timestamp="1596018022742">
-      <screen x="0" y="23" width="1440" height="813" />
+    <state x="845" y="158" width="670" height="673" key="search.everywhere.popup" timestamp="1596162411545">
+      <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state x="845" y="158" width="670" height="673" key="search.everywhere.popup/0.23.1440.807@0.23.1440.807" timestamp="1596016120824" />
+    <state x="845" y="158" width="670" height="673" key="search.everywhere.popup/0.23.1440.807@0.23.1440.807" timestamp="1596162411545" />
     <state x="845" y="159" width="670" height="675" key="search.everywhere.popup/0.23.1440.810@0.23.1440.810" timestamp="1595843131903" />
     <state x="845" y="160" width="670" height="58" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1595820120506" />
-    <state x="845" y="159" width="670" height="158" key="search.everywhere.popup/0.23.1440.812@0.23.1440.812" timestamp="1596009415280" />
+    <state x="845" y="159" width="670" height="158" key="search.everywhere.popup/0.23.1440.812@0.23.1440.812" timestamp="1596077115383" />
     <state x="845" y="160" width="670" height="678" key="search.everywhere.popup/0.23.1440.813@0.23.1440.813" timestamp="1596018022742" />
     <state x="845" y="160" width="670" height="679" key="search.everywhere.popup/0.23.1440.814@0.23.1440.814" timestamp="1594797198335" />
     <state x="845" y="160" width="670" height="680" key="search.everywhere.popup/0.23.1440.815@0.23.1440.815" timestamp="1596003312087" />

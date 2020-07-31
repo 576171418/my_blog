@@ -70,8 +70,6 @@ func GetComments(w http.ResponseWriter, r *http.Request) {
 		Data:    comments,
 	}
 
-	fmt.Println(comments)
-
 	response, _ = json.Marshal(responseInfo)
 
 	w.Write(response)
